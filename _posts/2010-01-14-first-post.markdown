@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: "First Post"
 summary: This is a test of Jekyll.
 ---
