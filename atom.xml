@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>strobemonkey dot com</title>
+ <link href="http://strobemonkey.githost.com/atom.xml" rel="self"/>
+ <link href="http://strobemonkey.githost.com/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://strobemonkey.com/</id>
+ <author>
+   <name>strobemonkey</name>
+   <email>strobemonkey@gmail.com</email>
+ </author>
+ 
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://strobemonkey.github.com{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://strobemonkey.github.com{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
