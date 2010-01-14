@@ -1,0 +1,130 @@
+body {
+	font: 12px/1.5em "Lucida Grande", "Lucida Sans Unicode";
+	color: #999;
+	background: #212121;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #6bb4fb;
+}
+
+a {
+	color: #555;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.full_background {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Site ID tags */
+
+#header {
+	padding: 2em;
+}
+
+#header > h1 > a {
+	font: 1.5em verdana;
+	color: #19448e;
+}
+
+#content {
+	margin: 5px 20% 10% 20%;
+}
+
+#content_body {
+	margin: 1em;
+}
+
+#footer {
+	text-align: center;
+	margin: 10px;
+}
+
+#footer > span {
+	color: #b4866b;
+}
+
+#navigation {
+	display: block;
+	text-align: center;
+}
+
+#navigation a {
+	padding: 3px;
+}
+
+#blurb {
+	margin: 2em;
+}
+
+#blurb.p {
+
+}
+
+#posts {
+	margin: 2em;
+}
+
+.post {
+	margin: 2em;
+}
+
+.post_date {
+	font-weight: bold;
+}
+
+.post_summary {
+	padding: 0.5em;
+}
+
+p.intro:first-letter {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+/* Personal information box */
+.information {
+	display: block;
+	text-align: center;
+}
+
+.name {
+	font-size: larger;
+	font-weight: bold;
+}
+
+/* Resume Data */
+
+.section_title {
+	font-variant: small-caps;
+	font-size: larger;
+	font-weight: bolder;
+}
+
+.section_detail {
+	display: block;
+	margin: 10px;
+}
+
+.work_box {
+	display: block;
+	margin: 10px;
+}
+
+.employer_data {
+	display: block;
+	font-weight: bolder;
+	margin: 10px;
+}
+
+.job_data {
+	display: block;
+	margin: 10px;
+}
