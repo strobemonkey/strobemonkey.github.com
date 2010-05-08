@@ -5,7 +5,7 @@
 	<meta name="author" content="Al Aitken" />
 	<meta name="robots" content="all" />
 
-	<title>strobemonkey</title>
+	<title>First Post</title>
 	
 	<style type="text/css" media="all">
 		@import "/static/css/screen.css";
@@ -26,33 +26,37 @@
 		</div>
 		
 		<div id="content_body">
-			<div id="posts">
-	<h2>Posts</h2>
-		
-		<div class="post">
-			<div>
-				<span class="post_date">26 Apr 2010</span> &raquo; <a href="/2010/04/26/activerecord-without-rails">Using ActiveRecord without Rails</a>
-			</div>
-			<div class="post_summary">You can use ActiveRecord without Rails but you'll have to do a bit of frigging about to get all the functionality you want</div>
-		</div>	
-		
-		<div class="post">
-			<div>
-				<span class="post_date">22 Apr 2010</span> &raquo; <a href="/2010/04/22/creating-a-custom-spree-report">Creating a custom Spree report</a>
-			</div>
-			<div class="post_summary">Creating a custom report in Spree 0.10.2</div>
-		</div>	
-		
-		<div class="post">
-			<div>
-				<span class="post_date">14 Jan 2010</span> &raquo; <a href="/2010/01/14/first-post">First Post</a>
-			</div>
-			<div class="post_summary">This is a test of Jekyll.</div>
-		</div>	
-		
+			<div id="post">
+<p>This will be the best blog ever.</p>
+<div class='highlight'><pre><code class='ruby'><span class='lineno'>1</span> <span class='k'>class</span> <span class='nc'>Test</span>
+<span class='lineno'>2</span> 
+<span class='lineno'>3</span> <span class='k'>end</span>
+</code></pre>
+</div>
 </div>
 
+<a name="#disqus"></a>
+<div id="disqus_thread"></div>
+<script type="text/javascript" src="http://disqus.com/forums/strobemonkeygithubcom/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/strobemonkeygithubcom/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/strobemonkeygithubcom/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
 		</div>
 		
 		<div id="footer">

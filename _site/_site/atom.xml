@@ -4,7 +4,7 @@
  <title>strobemonkey dot com</title>
  <link href="http://strobemonkey.githost.com/atom.xml" rel="self"/>
  <link href="http://strobemonkey.githost.com/"/>
- <updated>2010-05-08T12:21:42+02:00</updated>
+ <updated>2010-05-07T23:04:56+02:00</updated>
  <id>http://strobemonkey.com/</id>
  <author>
    <name>strobemonkey</name>
@@ -45,7 +45,7 @@
 &lt;span class='lineno'&gt;14&lt;/span&gt; &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;But if you&amp;#8217;re looking for the fancier functionality such as ActsAsList or ActsAsTree then you&amp;#8217;re going to have to do a bit of frigging as this functionality was removed from ActiveRecord (in Rails version 2.3.somethingorother) to make it more lightweight. The quickest way is to create a blank Rails project and install the desired functionality as a plugin&lt;br /&gt;&lt;code&gt;script/plugin install acts_as_tree&lt;/code&gt;&lt;br /&gt;then copy the code from&lt;br /&gt;&lt;code&gt;vendor/plugins/acts_as_tree/lib/activerecord/acts/tree.rb&lt;/code&gt;&lt;br /&gt;and place it into your project&lt;br /&gt;&lt;code&gt;lib/activerecord/acts/tree.rb&lt;/code&gt;&lt;br /&gt;then in your model add the following&lt;/p&gt;
+&lt;p&gt;But if you&amp;#8217;re looking for the fancier functionality such as ActsAsList or ActsAsTree then you&amp;#8217;re going to have to do a bit of frigging as this functionality was removed from ActiveRecord (in Rails version 2.3.somethingorother) to make it more lightweight. The quickest way is to create a blank Rails project and install the desired functionality as a plugin &lt;code&gt;script/plugin install acts_as_tree&lt;/code&gt; then copy the code from &lt;code&gt;vendor/plugins/acts_as_tree/lib/activerecord/acts/tree.rb&lt;/code&gt; and place it into your project &lt;code&gt;lib/activerecord/acts/tree.rb&lt;/code&gt; then in your model add the following&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='vg'&gt;$:&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;unshift&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='no'&gt;File&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;dirname&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='bp'&gt;__FILE__&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;/../lib&amp;quot;&lt;/span&gt;
 &lt;span class='lineno'&gt;2&lt;/span&gt; &lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;active_record/acts/list&amp;#39;&lt;/span&gt;
 &lt;span class='lineno'&gt;3&lt;/span&gt; &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;class_eval&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='kp'&gt;include&lt;/span&gt; &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Acts&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;List&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
@@ -58,23 +58,11 @@
    <link href="http://strobemonkey.github.com/2010/04/22/creating-a-custom-spree-report"/>
    <updated>2010-04-22T00:00:00+02:00</updated>
    <id>http://strobemonkey.github.com/2010/04/22/creating-a-custom-spree-report</id>
-   <content type="html">&lt;p&gt;Any additions made to a Spree project should be stored in&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/site/&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When Rails is up and running, code placed here will be rolled into Spree. If Spree is updated in the future then custom code shouldn&amp;#8217;t be affected if it&amp;#8217;s placed here.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Any additions you make to your Spree project should be stored in &lt;code&gt;vendor/extensions/site/&lt;/code&gt; When Rails is up and running, code placed here will be rolled into Spree. If you update Spree in the future then your custom code shouldn&amp;#8217;t be affected if it&amp;#8217;s placed here.&lt;/p&gt;
 
 &lt;h2 id='controller'&gt;Controller&lt;/h2&gt;
 
-&lt;p&gt;The controller for the new report will be stored in&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/site/controllers/admin/&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The controller code is based upon the reports controller found in the Spree code base here&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;app/controllers/admin/reports_controller.rb&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then create a new method, something like this:&lt;/p&gt;
+&lt;p&gt;The controller for the new report will be stored in &lt;code&gt;vendor/extensions/site/controllers/admin/&lt;/code&gt; The controller code is based upon the reports controller found in the Spree code base here &lt;code&gt;app/controllers/admin/reports_controller.rb&lt;/code&gt; You&amp;#8217;ll need to create a new method, something like this&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Admin&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;ReportsController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;Admin&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;BaseController&lt;/span&gt;
 &lt;span class='lineno'&gt; 2&lt;/span&gt;   &lt;span class='n'&gt;before_filter&lt;/span&gt; &lt;span class='ss'&gt;:load_data&lt;/span&gt;  
 &lt;span class='lineno'&gt; 3&lt;/span&gt;   
@@ -114,17 +102,7 @@
 &lt;/div&gt;
 &lt;h2 id='view'&gt;View&lt;/h2&gt;
 
-&lt;p&gt;The view for the report will be stored in&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/site/app/views/admin/reports/&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This view should be based upon the reports view found in the Spree code base&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/theme_default/app/views/admin/reports/sales_total.html.erb&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Here&amp;#8217;s a custom report view (written in HAML which is included in Spree) called&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/site/app/views/admin/reports/backorders_total.html.haml&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The view for the report will be stored in &lt;code&gt;vendor/extensions/site/app/views/admin/reports/&lt;/code&gt; This view should be based upon the reports view found in the Spree code base &lt;code&gt;vendor/extensions/theme_default/app/views/admin/reports/sales_total.html.erb&lt;/code&gt; Here&amp;#8217;s a custom report view (written in HAML which is included in Spree) called &lt;code&gt;vendor/extensions/site/app/views/admin/reports/backorders_total.html.haml&lt;/code&gt;&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='n'&gt;h1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;t&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;sales_totals&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='lineno'&gt; 2&lt;/span&gt; &lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='n'&gt;table&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;admin&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;report&lt;/span&gt;
 &lt;span class='lineno'&gt; 3&lt;/span&gt;   &lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='n'&gt;thead&lt;/span&gt;
@@ -140,15 +118,7 @@
 &lt;/div&gt;
 &lt;h2 id='view_index'&gt;View index&lt;/h2&gt;
 
-&lt;p&gt;You&amp;#8217;ll also need to override the default reports index view&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/theme_default/app/views/admin/reports/index.html.erb&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;by creating a new&lt;/p&gt;
-
-&lt;p&gt;vendor/extensions/site/app/views/admin/reports/index/html.erb&lt;/p&gt;
-
-&lt;p&gt;like this&lt;/p&gt;
+&lt;p&gt;You&amp;#8217;ll also need to override the default reports index view &lt;code&gt;vendor/extensions/theme_default/app/views/admin/reports/index.html.erb&lt;/code&gt; by creating a new &lt;code&gt;vendor/extensions/site/app/views/admin/reports/index/html.erb&lt;/code&gt; like this&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt; 1&lt;/span&gt; &lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='n'&gt;h1&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;t&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;listing_reports&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='lineno'&gt; 2&lt;/span&gt; &lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='n'&gt;table&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;index&lt;/span&gt;
 &lt;span class='lineno'&gt; 3&lt;/span&gt;   &lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='n'&gt;thead&lt;/span&gt;
@@ -164,11 +134,7 @@
 &lt;/div&gt;
 &lt;h2 id='route'&gt;Route&lt;/h2&gt;
 
-&lt;p&gt;You&amp;#8217;ll need to add some routing information for the new report into&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/site/config/routes.rb&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and it should look a bit like this&lt;/p&gt;
+&lt;p&gt;You&amp;#8217;ll need to add some routing information for the new report into &lt;code&gt;vendor/extensions/site/config/routes.rb&lt;/code&gt; and it should look a bit like this&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routing&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;draw&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
 &lt;span class='lineno'&gt;2&lt;/span&gt;    &lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;backorders_total_admin_reports&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/admin/reports/backorders_total&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:controller&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;admin/reports&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:action&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;backorders_total&amp;#39;&lt;/span&gt;
 &lt;span class='lineno'&gt;3&lt;/span&gt; &lt;span class='k'&gt;end&lt;/span&gt;
@@ -176,11 +142,7 @@
 &lt;/div&gt;
 &lt;h2 id='locale'&gt;Locale&lt;/h2&gt;
 
-&lt;p&gt;As Spree can be configured for many different languages, not just English, we need to add phrase lookups for our new report into&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vendor/extensions/site/config/locales/en-US.yml&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ours will look like this&lt;/p&gt;
+&lt;p&gt;As Spree can be configured for many different languages, not just English, we need to add phrase lookups for our new report into &lt;code&gt;vendor/extensions/site/config/locales/en-US.yml&lt;/code&gt; Ours will look like this&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='lineno'&gt;1&lt;/span&gt; &lt;span class='o'&gt;---&lt;/span&gt;
 &lt;span class='lineno'&gt;2&lt;/span&gt; &lt;span class='n'&gt;en&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='no'&gt;US&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt;
 &lt;span class='lineno'&gt;3&lt;/span&gt;   &lt;span class='n'&gt;backorders_total&lt;/span&gt;&lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Backorders Total&amp;quot;&lt;/span&gt;

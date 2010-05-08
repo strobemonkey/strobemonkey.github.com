@@ -150,9 +150,9 @@ div.exceptiontable {
 }
 body {
 	font-size: smaller;
-	background: black fixed no-repeat left top;
+	background: white fixed no-repeat left top;
 	margin: 2em 1em 2em 70px;
-	color: white;
+	color: black;
 	font-family: sans-serif
 }
 th {

@@ -22,7 +22,7 @@
 
 	<div id="content">
 		<div id="header" align="center">
-			<h1><a href="/" title="strobemonkey.com">Using ActiveRecord without Rails</a></h1>
+			<h1><a href="/" title="strobemonkey.com">strobemonkey</a></h1>
 		</div>
 		
 		<div id="content_body">
@@ -55,7 +55,7 @@
 <span class='lineno'>14</span> <span class='k'>end</span>
 </code></pre>
 </div>
-<p>But if you&#8217;re looking for the fancier functionality such as ActsAsList or ActsAsTree then you&#8217;re going to have to do a bit of frigging as this functionality was removed from ActiveRecord (in Rails version 2.3.somethingorother) to make it more lightweight. The quickest way is to create a blank Rails project and install the desired functionality as a plugin<br /><code>script/plugin install acts_as_tree</code><br />then copy the code from<br /><code>vendor/plugins/acts_as_tree/lib/activerecord/acts/tree.rb</code><br />and place it into your project<br /><code>lib/activerecord/acts/tree.rb</code><br />then in your model add the following</p>
+<p>But if you&#8217;re looking for the fancier functionality such as ActsAsList or ActsAsTree then you&#8217;re going to have to do a bit of frigging as this functionality was removed from ActiveRecord (in Rails version 2.3.somethingorother) to make it more lightweight. The quickest way is to create a blank Rails project and install the desired functionality as a plugin <code>script/plugin install acts_as_tree</code> then copy the code from <code>vendor/plugins/acts_as_tree/lib/activerecord/acts/tree.rb</code> and place it into your project <code>lib/activerecord/acts/tree.rb</code> then in your model add the following</p>
 <div class='highlight'><pre><code class='ruby'><span class='lineno'>1</span> <span class='vg'>$:</span><span class='o'>.</span><span class='n'>unshift</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='no'>File</span><span class='o'>.</span><span class='n'>dirname</span><span class='p'>(</span><span class='bp'>__FILE__</span><span class='p'>)</span><span class='si'>}</span><span class='s2'>/../lib&quot;</span>
 <span class='lineno'>2</span> <span class='nb'>require</span> <span class='s1'>&#39;active_record/acts/list&#39;</span>
 <span class='lineno'>3</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>class_eval</span> <span class='p'>{</span> <span class='kp'>include</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Acts</span><span class='o'>::</span><span class='no'>List</span> <span class='p'>}</span>
