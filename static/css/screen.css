@@ -162,7 +162,13 @@ td {
 	font-family: sans-serif
 }
 h1 {
+	margin-top:0px;
+	margin-bottom:0px;
+	font-size:24pt;
+	font-family:monospace;
 	color: purple
+	padding-top:5px;
+	padding-left:10px;
 }
 h2 {
 	color: purple
