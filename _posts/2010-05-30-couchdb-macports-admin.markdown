@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "CouchDB, MacPorts and admin user problem
+title: "CouchDB, MacPorts and admin user problem"
 summary: Creating an admin user on CouchDB after installing via MacPorts
 ---
 
