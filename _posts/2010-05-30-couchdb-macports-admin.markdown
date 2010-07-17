@@ -13,7 +13,7 @@ After clicking on the "fix this" link and supplying a new admin user name and pa
 The solution is to fiddle with ownerships and rights:
 
 {% highlight bash %}
-sudo -R couchdb:couchdb /opt/local/etc/couchdb/
+sudo chown -R couchdb:couchdb /opt/local/etc/couchdb/
 sudo chmod -R 0770 /opt/local/etc/couchdb/
 {% endhighlight %}
 
